@@ -117,4 +117,9 @@ public class TestController {
 		return "image/image_upload";
 	}
 	
+	@GetMapping("/test/profileEdit")
+	public String testProfileEdit() {
+		return "user/profile_edit";
+	}
+	
 }
