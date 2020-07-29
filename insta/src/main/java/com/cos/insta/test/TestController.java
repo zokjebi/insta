@@ -122,4 +122,10 @@ public class TestController {
 		return "user/profile_edit";
 	}
 	
+	@GetMapping("/test/explore")
+	public String testExplore() {
+		return "image/explore";
+	}
+	
+	
 }
