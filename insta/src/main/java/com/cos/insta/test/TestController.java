@@ -119,7 +119,7 @@ public class TestController {
 	
 	@GetMapping("/test/profileEdit")
 	public String testProfileEdit() {
-		return "user/profile_edit";
+		return "user/edit_profile";
 	}
 	
 	@GetMapping("/test/explore")

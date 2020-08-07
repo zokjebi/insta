@@ -5,11 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Costagram</title>
-	  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/modal.css">
   <link rel="stylesheet" href="/css/image-upload.css">
 </head>
 <body>
@@ -69,28 +66,27 @@
 
 	<%@ include file="../include/footer.jsp" %>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script>
-    var sel_file;
-    $(document).ready(function() {
-      $('#input_img').on("change", handleImgFileSelect);
-    });
-    function handleImgFileSelect(e) {
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);
-      filesArr.forEach(function(f) {
-        if (!f.type.match("image.*")) {
-          alert("확장자는 이미지 확장자만 가능합니다.");
-          return;
-        }
-        sel_file = f;
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          $('#img').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(f);
-      });
-    }
-  </script>
+	<script>
+	  var sel_file;
+	  $(document).ready(function() {
+	    $('#input_img').on("change", handleImgFileSelect);
+	  });
+	  function handleImgFileSelect(e) {
+	    var files = e.target.files;
+	    var filesArr = Array.prototype.slice.call(files);
+	    filesArr.forEach(function(f) {
+	      if (!f.type.match("image.*")) {
+	        alert("확장자는 이미지 확장자만 가능합니다.");
+	        return;
+	      }
+	      sel_file = f;
+	      var reader = new FileReader();
+	      reader.onload = function(e) {
+	        $('#img').attr('src', e.target.result);
+	      }
+	      reader.readAsDataURL(f);
+	    });
+	  }
+	</script>
 </body>
 </html>
