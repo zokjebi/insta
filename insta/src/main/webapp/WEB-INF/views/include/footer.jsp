@@ -18,6 +18,7 @@
    </nav>
    <span class="footer__copyright">Costagram</span>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/modal.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/modal.js"></script>

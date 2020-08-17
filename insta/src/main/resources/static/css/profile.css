@@ -44,7 +44,19 @@
   margin-right: 10px;
 }
 
-.profile__title a button {
+.profile_follow_button {
+  border: 0;
+  color: white;
+  font-weight: 600;
+  padding: 5px 15px;
+  background: #3c88de;
+  
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, .0975);
+}
+
+.profile_edit_button {
   border: 0;
   font-weight: 600;
   padding: 5px 15px;
@@ -187,24 +199,4 @@
 
 .profile__overlay-link:hover {
   background: #efefef;
-}
-
-.following_btn {
-	height: 30px;
-	width: 80px;
-	background-color: transparent;
-	color: black;
-	border-radius: 5px;
-	border: 1px solid dbdbdb;
-	font-weight: 600;
-}
-
-.follower_btn {
-	height: 30px;
-	width: 80px;
-	background-color: #3c88de;
-	color: white;
-	border-radius: 5px;
-	border: 0px;
-	font-weight: 600;
 }
