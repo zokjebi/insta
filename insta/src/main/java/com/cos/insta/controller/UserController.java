@@ -1,5 +1,7 @@
 package com.cos.insta.controller;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +70,11 @@ public class UserController {
 		 * 4. User 오브젝트 (Image (likeCount) 컬렉션)
 		 * 5. followCheck 팔로우 유무 (1 팔로우, 1이 아니면 언팔로우)
 		 */
+		
+		// 4번 임시
+		Optional<User> oToUser = mUserRepository.findById(id);
+		User toUser = oToUser.get();
+		model.addAttribute("toUser", toUser);
 		
 		// 5번
 		User user = userDetail.getUser();

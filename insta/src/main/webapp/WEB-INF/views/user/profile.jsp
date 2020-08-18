@@ -29,11 +29,50 @@
       <div class="profile__info">
         <div class="profile__title">
           <h1>serranoarevalo</h1>
+          <div id="follow_check">
+          <c:choose>
+          	<c:when test="${followCheck eq 1}">
+	          <button onClick="follow(false)" class="profile_edit_button">팔로잉</button>
+          	</c:when>
+          	<c:otherwise>
+          	  <button onClick="follow(true)" class="profile_follow_button">팔로우</button>
+          	</c:otherwise>
+          </c:choose>
+          </div>
+          <script>
+          	function follow(check) {
+          		alert('${toUser.id}');
+          		// true -> follow 하기
+          		// fasle -> unfollow 하기
+          		let url = "/follow/" + ${toUser.id};
+          		if (check) {
+          			fetch(url, {
+          				method: "POST"
+          			}).then(function(res){
+          				return res.text();
+          			}).then(function(res){
+          				if (res === "ok") {
+          					let follow_check_el = document.querySelector("#follow_check");
+          					follow_check_el.innerHTML = "<button onClick='follow(false)' class='profile_edit_button'>팔로잉</button>";
+          				}
+          			});
+          		} else {
+          			fetch(url, {
+          				method: "DELETE"
+          			}).then(function(res){
+          				return res.text();
+          			}).then(function(res){
+          				if (res === "ok") {
+          					let follow_check_el = document.querySelector("#follow_check");
+          					follow_check_el.innerHTML = "<button onClick='follow(true)' class='profile_follow_button'>팔로우</button>";
+          				}
+          			});
+          		}
+          	}
+          </script>
+          
           <a href="edit-profile.html">
-          	<button class="profile_follow_btn">팔로우</button>
-          </a>
-          <a href="edit-profile.html">
-            <button class="profile_edit_btn">Edit Profile</button>
+            <button class="profile_edit_button">Edit Profile</button>
           </a>
           <i class="fa fa-cog fa-lg"></i>
         </div>
@@ -197,6 +236,7 @@
   </div>
   
   <%@ include file="../include/footer.jsp" %>
+  <script src="/js/follow.js"></script>
 
   <script>
       $(function() {
