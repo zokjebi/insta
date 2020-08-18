@@ -51,6 +51,13 @@ public class UserController {
 	public String profile(@PathVariable int id) {
 		
 		// id를 통해서 해당 유저를 검색 (이미지 + 유저정보)
+		/**
+		 * 1. imageCount
+		 * 2. followerCount
+		 * 3. followingCount
+		 * 4. User 오브젝트 (Image (likeCount) 컬렉션)
+		 * 5. follow 유무
+		 */
 		
 		return "user/profile";
 	}
