@@ -50,10 +50,10 @@
             <span class="profile__stat-number">313</span>  게시물
           </li>
           <li class="profile__stat">
-            <span class="profile__stat-number">4,444</span><a href="/follow/follower/${user.id}">팔로워</a>
+            <span class="profile__stat-number">4,444 </span><a href="/follow/follower/${user.id}">팔로워</a>
           </li>
           <li class="profile__stat">
-            <span class="profile__stat-number">44</span><a href="/follow/follow/${user.id}">팔로우</a>
+            <span class="profile__stat-number">44 </span><a href="/follow/follow/${user.id}">팔로우</a>
           </li>
         </ul>
         <p class="profile__bio">
